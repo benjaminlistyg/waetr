@@ -180,6 +180,6 @@ For questions and feedback:
 If you use waetr in your research, please cite it as:
 
 ```
-Listyg, Benjamin. (2024). waetr: R Package for Web Accessibility Evaluation Testing. 
+Ross, B.V., & Listyg, B. (2024). waetr: R Package for Web Accessibility Evaluation Testing. 
 GitHub repository: https://github.com/benjaminlistyg/waetr
 ```
