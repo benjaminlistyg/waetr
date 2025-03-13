@@ -1,20 +1,8 @@
+<div align="center">
+  <img src="man/figures/logo.png" width="200" alt="waetr hex logo">
+</div>
+
 # waetr: Web Accessibility Evaluation Tools in R
-
-::::: {style="display: flex; align-items: flex-start;"}
-::: {style="flex: 1;"}
-```         
-<h1>waetr: Web Accessibility Evaluation Tools in R</h1>
-<h2>Overview</h2>
-<p>waetr is an R package that provides a comprehensive interface to the <a href="https://wave.webaim.org/">WAVE</a> (Web Accessibility Evaluation) API. It enables automated accessibility testing of web pages with support for batch processing, detailed reporting, and data visualization.</p>
-```
-:::
-
-::: {style="width: 220px; padding-left: 20px;"}
-```         
-<img src="man/figures/logo.png" width="200" alt="waetr hex logo">
-```
-:::
-:::::
 
 ## Overview
 
