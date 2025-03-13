@@ -1,6 +1,7 @@
 # waetr: Web Accessibility Evaluation Tools in R
 
 [![R-CMD-check](https://github.com/benjaminlistyg/waetr/workflows/R-CMD-check/badge.svg)](https://github.com/benjaminlistyg/waetr/actions)
+
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 ## Overview
