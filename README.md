@@ -1,6 +1,6 @@
 # waetr: Web Accessibility Evaluation Tools in R
 
-<img src="man/figures/logo.png" align="right" height="150" />
+<img src="man/figures/logo.png" align="right" height="200" alt="waetr logo showing a hex badge with a stylized serving dish and hands" />
 
 ## Overview
 
