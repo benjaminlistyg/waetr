@@ -5,7 +5,7 @@
 
 ## Overview
 
-waetr is an R package that provides a comprehensive interface to the [WAVE](https://wave.webaim.org/) (Web Accessibility Evaluation) and [Silktide](https://developers.silktide.com/Silktide-API-63dfdfdb9af6423bad236bcc3d5ee47a) APIs. It enables automated accessibility testing of web pages with support for batch processing, detailed reporting, and data visualization.
+waetr is an R package that provides a comprehensive interface to the [WAVE](https://wave.webaim.org/) (Web Accessibility Evaluation) API. It enables automated accessibility testing of web pages with support for batch processing, detailed reporting, and data visualization.
 
 ## Features
 
