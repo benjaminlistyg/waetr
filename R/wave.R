@@ -1,3 +1,33 @@
+#' Access WebAIM WAVE Accessibility API
+#'
+#' This function provides an interface to the WebAIM WAVE accessibility evaluation API.
+#' It allows you to analyze web pages for accessibility issues and retrieve detailed reports.
+#'
+#' @param key Character string. Your WAVE API key
+#' @param url Character string. URL of the webpage to analyze
+#' @param format Character string. Response format (optional)
+#' @param viewportwidth Integer. Viewport width for analysis (optional)
+#' @param reporttype Integer. Type of report to generate (1-4) (optional)
+#' @param username Character string. Username for protected pages (optional)
+#' @param password Character string. Password for protected pages (optional)
+#' @param useragent Character string. Custom user agent (optional)
+#' @param toDataframe Logical. Whether to convert results to a data frame (default: FALSE)
+#' @param file Character string. Optional file path to save JSON results
+#'
+#' @return List or tibble containing WAVE analysis results
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Basic usage
+#' results <- wave(key = "your_api_key", url = "https://example.com")
+#'
+#' # Get results as a data frame
+#' df_results <- wave(key = "your_api_key", url = "https://example.com", toDataframe = TRUE)
+#'
+#' # Save results to a file
+#' wave(key = "your_api_key", url = "https://example.com", file = "wave_results.json")
+#' }
 wave <- function(key,
                  url,
                  format = NULL,
@@ -61,7 +91,7 @@ wave <- function(key,
   # If toDataframe is TRUE, convert the data to a tidy data frame
   if (toDataframe) {
     # Initialize an empty data frame
-    output_data <- tibble()
+    output_data <- tibble::tibble()
 
     # Iterate over each category in the data
     for (cat in names(data)) {
@@ -74,34 +104,34 @@ wave <- function(key,
             # Iterate over each item in the subcategory
             for (item in names(data[[cat]][[subcat]])) {
               # Create a tibble for the item and add it to the output data frame
-              item_data <- tibble(
+              item_data <- tibble::tibble(
                 category = cat,
                 subcategory = subcat,
                 item = item,
                 value = as.character(unlist(data[[cat]][[subcat]][[item]]))
               )
-              output_data <- bind_rows(output_data, item_data)
+              output_data <- dplyr::bind_rows(output_data, item_data)
             }
           } else {
             # Create a tibble for the subcategory and add it to the output data frame
-            subcat_data <- tibble(
+            subcat_data <- tibble::tibble(
               category = cat,
               subcategory = subcat,
               item = NA,
               value = as.character(unlist(data[[cat]][[subcat]]))
             )
-            output_data <- bind_rows(output_data, subcat_data)
+            output_data <- dplyr::bind_rows(output_data, subcat_data)
           }
         }
       } else {
         # Create a tibble for the category and add it to the output data frame
-        cat_data <- tibble(
+        cat_data <- tibble::tibble(
           category = cat,
           subcategory = NA,
           item = NA,
           value = as.character(unlist(data[[cat]]))
         )
-        output_data <- bind_rows(output_data, cat_data)
+        output_data <- dplyr::bind_rows(output_data, cat_data)
       }
     }
     return(output_data)
