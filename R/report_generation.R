@@ -10,6 +10,8 @@
 #' @param api_key Character string. WAVE API key (required for URL analysis)
 #' @param output_dir Character string. Directory to save report files
 #' @param report_type Integer. WAVE report type (1-4)
+#' @param include_plots Logical. Whether to include plots in the report (default: TRUE)
+#' @param custom_theme Character string. Visual theme for plots (default: "light")
 #'
 #' @return List containing plots and summary data frame
 #' @export
