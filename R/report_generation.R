@@ -21,15 +21,20 @@
 #' report <- create_accessibility_report(
 #'   input = c("https://example.com", "https://example.org"),
 #'   api_key = "your_api_key",
-#'   output_dir = "accessibility_report"
+#'   output_dir = tempdir()
 #' )
 #' }
 create_accessibility_report <- function(input,
                                         api_key = NULL,
-                                        output_dir = "wave_report",
+                                        output_dir = NULL,
                                         report_type = 1,
                                         include_plots = TRUE,
                                         custom_theme = "light") {
+
+  # Use tempdir() if output_dir is NULL
+  if (is.null(output_dir)) {
+    output_dir <- tempdir()
+  }
 
   # Create output directory if it doesn't exist
   if (!dir.exists(output_dir)) {

@@ -25,8 +25,8 @@
 #' # Get results as a data frame
 #' df_results <- wave(key = "your_api_key", url = "https://example.com", toDataframe = TRUE)
 #'
-#' # Save results to a file
-#' wave(key = "your_api_key", url = "https://example.com", file = "wave_results.json")
+#' # Save results to a temporary file
+#' wave(key = "your_api_key", url = "https://example.com", file = file.path(tempdir(), "wave_results.json"))
 #' }
 wave <- function(key,
                  url,
