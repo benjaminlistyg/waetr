@@ -7,7 +7,7 @@
 create_accessibility_report(
   input,
   api_key = NULL,
-  output_dir = "wave_report",
+  output_dir = NULL,
   report_type = 1,
   include_plots = TRUE,
   custom_theme = "light"
@@ -37,7 +37,7 @@ Generates a complete accessibility report with visualizations and summary data
 report <- create_accessibility_report(
   input = c("https://example.com", "https://example.org"),
   api_key = "your_api_key",
-  output_dir = "accessibility_report"
+  output_dir = tempdir()
 )
 }
 }

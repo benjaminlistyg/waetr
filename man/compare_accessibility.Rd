@@ -45,5 +45,8 @@ p <- compare_accessibility(
   api_key = "your_api_key",
   plot_type = "category_counts"
 )
+
+# Save the plot to a temporary directory
+ggsave(file.path(tempdir(), "accessibility_comparison.png"), p)
 }
 }
